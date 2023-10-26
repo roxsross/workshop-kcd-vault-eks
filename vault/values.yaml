@@ -19,7 +19,7 @@ global:
 
   # External vault server address for the injector and CSI provider to use.
   # Setting this will disable deployment of a vault server.
-  externalVaultAddr: "https://vault-cluster-public-vault-502544fb.6eebf755.z1.hashicorp.cloud:8200"
+  externalVaultAddr: "REPLACE-SERVER-VAULT"
 
   # If deploying to OpenShift
   openshift: false
@@ -133,7 +133,8 @@ injector:
     timeoutSeconds: 5
 
   # Mount Path of the Vault Kubernetes Auth Method.
-  authPath: "auth/k8s-aws-roxsross-gitops-eks"
+  authPath: "auth/kubernetes"
+  # authPath: "auth/k8s-aws-roxsross-gitops-eks"
 
   # Configures the log verbosity of the injector.
   # Supported log levels include: trace, debug, info, warn, error
