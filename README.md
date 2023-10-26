@@ -1,7 +1,7 @@
 # Workshop VAULT 101
 Time to Demo by RoxsRoss
 
-<img width="60%" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KAlT3VBqfJLJ4tRd4uzh5Q.png"> 
+<img width="80%" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KAlT3VBqfJLJ4tRd4uzh5Q.png"> 
 
 # Vault 
 
