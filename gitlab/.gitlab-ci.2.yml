@@ -1,0 +1,22 @@
+stages:
+  - vault
+
+vault:
+  stage: vault
+  variables:
+    VAULT_SERVER_URL: ""
+    VAULT_AUTH_PATH: 
+    VAULT_AUTH_ROLE: ""
+  id_tokens:
+    VAULT_ID_TOKEN:
+      aud: https://gitlab.example.com  
+  secrets:
+    PASSWORD:
+      vault:
+        engine:
+          name: "kv-v1"
+          path: "secret"
+        path: "kroxs/n/n"
+        field: "user_id"
+  script:
+    - echo "export PASS=$(cat $PASSWORD)" > .vault   

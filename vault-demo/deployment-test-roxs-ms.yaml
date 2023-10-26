@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-roxs-ms
+  namespace: workshop
+  labels:
+    app.kubernetes.io/created-by: eks-workshop
+    app.kubernetes.io/type: app
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: test-roxs-ms
+      app.kubernetes.io/instance: test-roxs-ms
+      app.kubernetes.io/component: service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: test-roxs-ms
+        app.kubernetes.io/instance: test-roxs-ms
+        app.kubernetes.io/component: service
+        app.kubernetes.io/created-by: eks-workshop
+      annotations:
+        vault.hashicorp.com/agent-inject: 'true'
+        vault.hashicorp.com/agent-inject-secret-helloworld: "k8sroxs/aws/test-roxs-ms"
+        vault.hashicorp.com/agent-inject-template-helloworld: |
+          {{- with secret "k8sroxs/aws/test-roxs-ms" }}
+          {{ .Data.data.firstname }}
+          {{ .Data.data.team }}
+          {{ end }}              
+        vault.hashicorp.com/log-level: 'debug'
+        vault.hashicorp.com/role: 'develop-test-roxs-ms'
+        vault.hashicorp.com/tls-skip-verify: 'true'
+        # vault.hashicorp.com/namespace: 'admin'        
+    spec:
+      serviceAccountName: default
+      containers:
+      - name: nginx
+        image: nginx
+        command:
+          - /bin/sh
+        args:
+          - '-c'
+          - while true; do cat /vault/secrets/helloworld; sleep 10; done 
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "50m"          

@@ -1,0 +1,18 @@
+stages:
+  - vault
+
+vault:
+  stage: vault
+  variables:
+    VAULT_SERVER_URL: ""
+    VAULT_AUTH_ROLE: ""
+  secrets:
+    PASSWORD:
+      vault:
+        engine:
+          name: "kv-v1"
+          path: "secret"
+        path: "kroxs/n/n"
+        field: "user_id"
+  script:
+    - echo "export PASS=$(cat $PASSWORD)" > .vault   
