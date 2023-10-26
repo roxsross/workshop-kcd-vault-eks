@@ -29,31 +29,31 @@ En resumen, Vault de HashiCorp es una herramienta esencial en entornos modernos 
 
 ### Comandos
 
-# DEV Server
+#### DEV Server
 Start DEV server
 ```ps
 vault server -dev
 ```
 
-# Before login
+#### Before login
 Set vault address before log in
 ```ps
 $env:VAULT_ADDR="http://127.0.0.1:8200"
 ```
 
-# Login
-## Login using token
+#### Login
+#### Login using token
 ```ps
 vault login
 ```
 
-## Login using userpass
+#### Login using userpass
 ```ps
 vault login -method=userpass username=$userName
 ```
 
-## Secret / KV
-### Set a secret in KV Secret Engine
+#### Secret / KV
+#### Set a secret in KV Secret Engine
 ```ps
 vault kv put $kvName/$secretName $key=$value
 ```
@@ -64,61 +64,61 @@ vault kv put secret/secretName key=value
 vault write secret/secretName key=value
 ```
 
-### Get a secret from KV Secret Engine
+#### Get a secret from KV Secret Engine
 ```ps
 vault kv get secret/secretName
 // or old syntax
 vault read secret/secretName
 ```
 
-### Move a secret between KV Secret Engines
+#### Move a secret between KV Secret Engines
 ```ps
 vault secrets move kvSecret1/secretName kvSecret2/secretName 
 ```
 
-### List all secrets in a Secret Engine
+#### List all secrets in a Secret Engine
 ```ps
 vault kv list secretEngineName
 ```
 
-### List all Secrets Engines
+#### List all Secrets Engines
 ```ps
 vault secrets list
 ```
 
-### Upgrade Secret Engine to v2 (v1 is default)
+#### Upgrade Secret Engine to v2 (v1 is default)
 ```ps
 vault kv enable-versioning secret
 ```
-### Create new KV Secret Engine
+#### Create new KV Secret Engine
 ```ps
 vault secrets enable -path=devkv kv
 ```
 
-# Token
-## Get information about current token
+#### Token
+#### Get information about current token
 ```ps
 vault token lookup
 ```
 
-# Userpass
-## Login
+#### Userpass
+#### Login
 ```ps
 vault login -method=userpass username=$userName
 ```
 
-## Add a user
+#### Add a user
 ```ps
 vault write auth/userpass/users/arthur password=dent
 ```
 
-## List users
+#### List users
 ```ps
 vault list auth/userpass/users
 ```
 
-# Policies
-## List all policies
+#### Policies
+#### List all policies
 ```ps
 vault policy list
 ```
