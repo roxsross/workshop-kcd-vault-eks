@@ -30,7 +30,8 @@ spec:
           {{ end }}              
         vault.hashicorp.com/log-level: 'debug'
         vault.hashicorp.com/role: 'develop-test-roxs-ms'
-        vault.hashicorp.com/tls-skip-verify: 'true'       
+        vault.hashicorp.com/tls-skip-verify: 'true'
+        vault.hashicorp.com/namespace: 'admin'        
     spec:
       serviceAccountName: default
       containers:
