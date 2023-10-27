@@ -1,11 +1,15 @@
 # Workshop VAULT 101
 Time to Demo by RoxsRoss
 
-<img width="80%" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KAlT3VBqfJLJ4tRd4uzh5Q.png"> 
+<img width="80%" src="https://roxsross-linktree.s3.amazonaws.com/295-full-website-banner-transparent-white.png"> 
+
+--- 
 
 # Vault 
 
 Vault es una herramienta de código abierto desarrollada por HashiCorp que se utiliza para gestionar secretos y datos de autenticación en entornos de infraestructura y aplicaciones. Los secretos pueden incluir contraseñas, claves API, certificados, tokens de acceso y otros datos sensibles. Vault se ha vuelto muy popular en entornos de infraestructura moderna, como la orquestación de contenedores y la gestión de microservicios, donde la gestión segura de secretos es esencial.
+
+<center><img width="50%" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KAlT3VBqfJLJ4tRd4uzh5Q.png"> </center>
 
 ## Los beneficios de Vault de HashiCorp incluyen:
 
